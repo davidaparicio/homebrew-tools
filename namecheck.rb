@@ -5,20 +5,20 @@
 class Namecheck < Formula
   desc ""
   homepage "https://github.com/davidaparicio/homebrew-tools"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.1/namecheck_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "0b4e0750e1e76e8c70ed75ee9357a3a45972e1ac28c5462c63823b63612e34f0"
+    if Hardware::CPU.intel?
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Darwin_x86_64.tar.gz"
+      sha256 "b5c82e2df6867ea8657bad11bf6ab73f8f3edd1598cb57c5a32912255f05b477"
 
       def install
         bin.install "namecheck"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.1/namecheck_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "63077a230fd86e5976757bb21e06b1be5d6f838f109df0c47941a7dcf5740d95"
+    if Hardware::CPU.arm?
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "7948db8e58e52e06215e7676fdb741aef03d43136fe00f3138829d717ad635a2"
 
       def install
         bin.install "namecheck"
@@ -28,16 +28,16 @@ class Namecheck < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.1/namecheck_0.0.1_Linux_arm64.tar.gz"
-      sha256 "4b25e34f7b026d94ad56ce83aa627d228634c30aa3bd1cc6f1ed4284f407bb2d"
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Linux_arm64.tar.gz"
+      sha256 "919366bcd5f7f17253becd018fc5c1d1c80441b9078467fdd83d2ac90dfd7c02"
 
       def install
         bin.install "namecheck"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.1/namecheck_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "03e045d6614bbed65f808236b303744e01415be674807af6be62a96bd38efe16"
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "f494aca8a00bf5785c404ee5f303cc96fcd426d7659a2d64beb8331121f47d40"
 
       def install
         bin.install "namecheck"
