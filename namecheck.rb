@@ -5,11 +5,11 @@
 class Namecheck < Formula
   desc ""
   homepage "https://github.com/davidaparicio/homebrew-tools"
-  version "0.0.4"
+  version "0.0.5"
 
   on_macos do
-    url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.4/namecheck_0.0.4_Darwin_x86_64.tar.gz"
-    sha256 "99f2b12a78c6e59327c0d65ad3db2c05e25af31cda0279a8a4e674de40fbf4cc"
+    url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.5/namecheck_0.0.5_Darwin_x86_64.tar.gz"
+    sha256 "140da6d2132abf1f794464ab5ecb998f92363c0e7df6fdc555357c242bee06a9"
 
     def install
       bin.install "namecheck"
@@ -28,8 +28,8 @@ class Namecheck < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.4/namecheck_0.0.4_Linux_x86_64.tar.gz"
-      sha256 "4bba293e1534616ccc9d06488ecbfd1bd4c1da5ef9668e49848f6f69dde1ced1"
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.5/namecheck_0.0.5_Linux_x86_64.tar.gz"
+      sha256 "5a7257568a29c9030374bacadcf69e0ada9dfdb285b737959be72799ae48460f"
 
       def install
         bin.install "namecheck"
