@@ -5,39 +5,31 @@
 class Namecheck < Formula
   desc ""
   homepage "https://github.com/davidaparicio/homebrew-tools"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Darwin_x86_64.tar.gz"
-      sha256 "b5c82e2df6867ea8657bad11bf6ab73f8f3edd1598cb57c5a32912255f05b477"
+    url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.3/namecheck_0.0.3_Darwin_x86_64.tar.gz"
+    sha256 "244a6290ee45f248fac10f1c0830bb27eb59471d05be0eababcc95d67e06774e"
 
-      def install
-        bin.install "namecheck"
-      end
+    def install
+      bin.install "namecheck"
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Darwin_arm64.tar.gz"
-      sha256 "7948db8e58e52e06215e7676fdb741aef03d43136fe00f3138829d717ad635a2"
 
-      def install
-        bin.install "namecheck"
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Namecheck
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Linux_arm64.tar.gz"
-      sha256 "919366bcd5f7f17253becd018fc5c1d1c80441b9078467fdd83d2ac90dfd7c02"
-
-      def install
-        bin.install "namecheck"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.2/namecheck_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "f494aca8a00bf5785c404ee5f303cc96fcd426d7659a2d64beb8331121f47d40"
+      url "https://github.com/davidaparicio/namecheck/releases/download/v0.0.3/namecheck_0.0.3_Linux_x86_64.tar.gz"
+      sha256 "31be7bb22216885a5d5154888ab83667d37357f35594901adf71be940935a655"
 
       def install
         bin.install "namecheck"
