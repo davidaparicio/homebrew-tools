@@ -11,7 +11,7 @@ class Cuc < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/davidaparicio/cuc/releases/download/v0.0.2/cuc_Linux_x86_64.tar.gz"
-      sha256 "00a6134c62cc80616b0a383f9b99054ab02a0190212fb24113473baf5fba9bf4"
+      sha256 "be6621a845ffcbc0c925e1353dc3e7a5073e91c0b270d94a63b4f91292fda7d2"
 
       def install
         bin.install "cuc"
